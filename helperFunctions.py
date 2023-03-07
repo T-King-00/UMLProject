@@ -18,7 +18,7 @@ def custom_sentencizer(doc):
 nlp = spacy.load("en_core_web_lg")
 nlp.add_pipe("custom_sentencizer", before="parser")  # Insert before the parser
 
-def getSentencesFromFile(fileName):
+def getSentencesFromFile(file):
     doc = nlp(file)
     sentences=[]
     for sent in doc.sents:

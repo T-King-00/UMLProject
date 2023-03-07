@@ -1,29 +1,39 @@
-
-import os
-os.system("pip install -r requirements.txt")
-
+#dont forget to run pip install -r requirements.txt
 import plantUML,helperFunctions
 import spacy
+import requests
+response = requests.get('https://raw.githubusercontent.com/T-King-00/Gp-AutomationOfBaTasks/tony/atmUserStories.txt')
+file = response.text
 
-x=helperFunctions.getSentencesFromFile("university.txt")
-print(x)
 
+x=helperFunctions.getSentencesFromFile(file)
 
-"""
-fileName="classtest11"
-plantUml1=plantUML.ClassModel(fileName)
-plantUml1.addClass("Person")
-plantUml1.addClass("Student")
-plantUml1.addClass("Doctor")
-plantUml1.addGeneralizationRelation("Student","Person")
-plantUml1.addGeneralizationRelation("Doctor","Person")
-plantUml1.addMorFtoClass("Person","username")
-plantUml1.addMorFtoClass("Person","Password",'-')
-plantUml1.addMorFtoClass("Student","GPA",'-')
-plantUml1.addMorFtoClass("Doctor","Salary",'-')
-plantUml1.addAssociationRelation("Student","Doctor")
-plantUml1.addClass("Course")
-plantUml1.addAssoClass("Student","Doctor","Course")
-plantUml1.closeFile()
+print(x[0])
 
-os.system("python -m plantuml "+ fileName )"""
+#from spacy import displacy
+doc5 = helperFunctions.nlp(x[0])
+#displacy.serve(doc5, style="dep",)
+
+# Find the main verb of the sentence
+mainVerb=None
+subject=None
+object=None
+action=None
+
+for token in doc5:
+    print(token , token.dep_  )
+    # Find the subject of the sentence (a noun or pronoun)
+    if token.dep_ == 'nsubj' and token.pos_ in ['NOUN', 'PRON']:
+        subject = token.text
+    # Find the main verb of the sentence
+    elif token.dep_ == 'ROOT' and token.pos_ == 'VERB':
+        mainVerb = token.text
+    elif token.dep_ == "dobj" and token.head.text == action:
+        object =  token.text
+    if token.dep_ == "xcomp":
+        action=token.text
+
+print(subject)
+print (mainVerb)
+print("action is : " ,action)
+print("object is :" , object)
