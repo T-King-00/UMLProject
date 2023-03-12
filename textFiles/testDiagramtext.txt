@@ -16,4 +16,21 @@ plantUml1.addClass("Course")
 plantUml1.addAssoClass("Student","Doctor","Course")
 plantUml1.closeFile()
 
-os.system("python -m plantuml "+ fileName )"""
+os.system("python -m plantuml "+ fileName )
+"""
+
+
+#test 1 for use case
+
+plantUml=UseCaseModel(filename)
+plantUml.addCustomMessage("left to right direction")
+plantUml.addActor("User")
+plantUml.addUseCase("pay")
+plantUml.addUseCase("eat")
+plantUml.addUseCase("drink")
+plantUml.addUseCasetoActor("User","pay")
+plantUml.addUseCasetoActor("User","drink")
+plantUml.addUseCasetoActor("User","eat")
+plantUml.addUseCasetoActor("User","eat")
+plantUml.closeFile()
+#test classdiagram

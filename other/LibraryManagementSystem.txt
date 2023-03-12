@@ -1,0 +1,20 @@
+As a chef, I want to add new dishes.
+As a chef, I want to check the available amount ingredients.
+As a manager, I want to update employee data so that I can keep their information up-to-date.
+As a manager, I want to update items in inventory list.
+As a manager, I want to update the inventory list so that I can fix problems in the list.
+As a waiter, I want to update the waiting time of the table.
+As a waiter, I want to view menu groups.
+As a waiter, I want to view menu.
+As a waiter, I want to view order items under menu groups.
+As an employee, I want to add a customer order.
+As an employee, I want to add a new information about myself to the my employee data
+As an employee, I want to add a store order.
+As a customer, I want to create my borrows.
+As a customer, I want to create which book has been read the most this month.
+As a customer, I want to delete book recomendation.
+As a customer, I want to delete my borrows.
+As a librarian, I want a random book suggestion system so I can recommend to the visitors that are asked for book suggestions since I do not read books.
+As a librarian, I want to add and edit the subscribers' profiles so that I can enter their details in the system.
+As a librarian, I want to add books to the library.
+As a librarian, I want to add new books.

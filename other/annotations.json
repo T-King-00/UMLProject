@@ -1,0 +1,785 @@
+{
+  "classes": [
+    "ACTOR",
+    "CLASS ENTITY",
+    "ATTRIBUTE",
+    "METHOD"
+  ],
+  "annotations": [
+    [
+      "As a participant, I do not want the site shut down while I’m in the midst of a quiz or video so that my progress isn’t interrupted.\r",
+      {
+        "entities": [
+          [
+            5,
+            16,
+            "ACTOR"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a participant, I can participate in a forum for a course so that I can discuss questions and topics with the instructor and other participants.\r",
+      {
+        "entities": [
+          [
+            5,
+            16,
+            "ACTOR"
+          ],
+          [
+            41,
+            46,
+            "ATTRIBUTE"
+          ],
+          [
+            53,
+            59,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As an instructor, I can post announcements to a project “home page” for a Scheduled Course so that I can tell participants about important thinks such as “I’m delayed in posting chapter 7.”.\r",
+      {
+        "entities": [
+          [
+            6,
+            16,
+            "ACTOR"
+          ],
+          [
+            29,
+            42,
+            "ATTRIBUTE"
+          ],
+          [
+            74,
+            90,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a participant, I can read announcements from an instructor for a Scheduled Course so that I can keep up to date on news.\r",
+      {
+        "entities": [
+          [
+            5,
+            16,
+            "ACTOR"
+          ],
+          [
+            29,
+            61,
+            "ATTRIBUTE"
+          ],
+          [
+            68,
+            84,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As an instructor, I can create quizzes so that participants can assess their learning.\r",
+      {
+        "entities": [
+          [
+            6,
+            16,
+            "ACTOR"
+          ],
+          [
+            31,
+            38,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a participant, I can take a quiz as part of a course so that I can get feedback on how well I learned material in the previous video(s).\r",
+      {
+        "entities": [
+          [
+            5,
+            16,
+            "ACTOR"
+          ],
+          [
+            31,
+            35,
+            "ATTRIBUTE"
+          ],
+          [
+            49,
+            55,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a participant, I see if I pass a quiz after I finish taking it so that I can get feedback on how well I learned material in the previous video(s).\r",
+      {
+        "entities": [
+          [
+            5,
+            16,
+            "ACTOR"
+          ],
+          [
+            36,
+            40,
+            "CLASS ENTITY"
+          ],
+          [
+            84,
+            92,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As an instructor, I want quiz responses stored in the database so that I can see how people are doing at various questions, perhaps so I can fix one that is worded poorly.\r",
+      {
+        "entities": [
+          [
+            6,
+            16,
+            "ACTOR"
+          ],
+          [
+            25,
+            29,
+            "CLASS ENTITY"
+          ],
+          [
+            30,
+            39,
+            "ATTRIBUTE"
+          ],
+          [
+            113,
+            122,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a participant, I can see which quizzes I’ve passed, not passed, or not yet taken when viewing the course outline so that I know which quizzes I need to take or possibly re-take.\r",
+      {
+        "entities": [
+          [
+            5,
+            16,
+            "ACTOR"
+          ],
+          [
+            34,
+            41,
+            "CLASS ENTITY"
+          ],
+          [
+            47,
+            53,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a participant, I can leave a comment about a course so that I can tell the world what I think of it.\r",
+      {
+        "entities": [
+          [
+            5,
+            16,
+            "ACTOR"
+          ],
+          [
+            32,
+            39,
+            "ATTRIBUTE"
+          ],
+          [
+            48,
+            54,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a participant, I want to receive feedback after each quiz question so that I can see if I got the question right or wrong.\r",
+      {
+        "entities": [
+          [
+            5,
+            16,
+            "ACTOR"
+          ],
+          [
+            36,
+            44,
+            "ATTRIBUTE"
+          ],
+          [
+            56,
+            60,
+            "CLASS ENTITY"
+          ],
+          [
+            61,
+            69,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a participant, I can navigate a quiz by submitting an answer or by pressing skip (forward) or back so that I can answer questions in a different order if I’d like.\r",
+      {
+        "entities": [
+          [
+            5,
+            16,
+            "ACTOR"
+          ],
+          [
+            24,
+            32,
+            "METHOD"
+          ],
+          [
+            35,
+            39,
+            "CLASS ENTITY"
+          ],
+          [
+            57,
+            63,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a site visitor, I can read an FAQ so that all my questions are answered.As a participant, I can get answers via video rather than text so that I watch rather than read an answer\r",
+      {
+        "entities": [
+          [
+            5,
+            17,
+            "ACTOR"
+          ],
+          [
+            33,
+            36,
+            "CLASS ENTITY"
+          ],
+          [
+            52,
+            61,
+            "ATTRIBUTE"
+          ],
+          [
+            80,
+            91,
+            "ACTOR"
+          ],
+          [
+            103,
+            110,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a search engine, I can view a site map so that all pages are indexed.\r",
+      {
+        "entities": [
+          [
+            5,
+            18,
+            "ACTOR"
+          ],
+          [
+            33,
+            41,
+            "CLASS ENTITY"
+          ],
+          [
+            54,
+            59,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As an instructor, I can view all feedback for a course when logged in so that I can see historical or aggregate data on my courses.\r",
+      {
+        "entities": [
+          [
+            6,
+            16,
+            "ACTOR"
+          ],
+          [
+            33,
+            41,
+            "ATTRIBUTE"
+          ],
+          [
+            48,
+            54,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a participant, I can manage my account so that it reflects my current information.\r",
+      {
+        "entities": [
+          [
+            5,
+            16,
+            "ACTOR"
+          ],
+          [
+            34,
+            41,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a participant, I can view a list of all courses I’ve taken and the PDUs each earned me so that I have access to that historical information and don’t call someone instead.\r",
+      {
+        "entities": [
+          [
+            5,
+            16,
+            "ACTOR"
+          ],
+          [
+            31,
+            61,
+            "CLASS ENTITY"
+          ],
+          [
+            70,
+            74,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As an instructor, I can upload videos to be part of a course so that participants can watch those videos.\r",
+      {
+        "entities": [
+          [
+            6,
+            16,
+            "ACTOR"
+          ],
+          [
+            31,
+            37,
+            "ATTRIBUTE"
+          ],
+          [
+            54,
+            60,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As an instructor, I can create a quiz to include in a video course so that participants can take those quizzes to ensure they are learning\r",
+      {
+        "entities": [
+          [
+            6,
+            16,
+            "ACTOR"
+          ],
+          [
+            33,
+            37,
+            "ATTRIBUTE"
+          ],
+          [
+            54,
+            59,
+            "ATTRIBUTE"
+          ],
+          [
+            60,
+            66,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As an instructor, I can properly sequence the elements of course so that I can assemble them into an amazing course.\r",
+      {
+        "entities": [
+          [
+            6,
+            16,
+            "ACTOR"
+          ],
+          [
+            58,
+            64,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As an instructor, I indicate whether a discussion forum is part of a course so that I can add a forum to some but not all courses.\r",
+      {
+        "entities": [
+          [
+            6,
+            16,
+            "ACTOR"
+          ],
+          [
+            39,
+            55,
+            "CLASS ENTITY"
+          ],
+          [
+            69,
+            75,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As an instructor, I can indicate the schedule for a course so that prospective participants and participants can see what course elements will be presented each week and what they’ll be.\r",
+      {
+        "entities": [
+          [
+            6,
+            16,
+            "ACTOR"
+          ],
+          [
+            37,
+            45,
+            "ATTRIBUTE"
+          ],
+          [
+            52,
+            58,
+            "CLASS ENTITY"
+          ],
+          [
+            122,
+            137,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As an instructor, I can set the publication date for course elements (for a scheduled course) so that items become available when I want and not sooner.\r",
+      {
+        "entities": [
+          [
+            6,
+            16,
+            "ACTOR"
+          ],
+          [
+            32,
+            48,
+            "ATTRIBUTE"
+          ],
+          [
+            53,
+            59,
+            "CLASS ENTITY"
+          ],
+          [
+            60,
+            68,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As an instructor, I can add subtitles to any video so that it is more accessible.\r",
+      {
+        "entities": [
+          [
+            6,
+            16,
+            "ACTOR"
+          ],
+          [
+            28,
+            37,
+            "ATTRIBUTE"
+          ],
+          [
+            45,
+            50,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As an instructor, I can set the thumbnail image for each video so that the image is one I like rather than randomly selected.\r",
+      {
+        "entities": [
+          [
+            6,
+            16,
+            "ACTOR"
+          ],
+          [
+            32,
+            47,
+            "ATTRIBUTE"
+          ],
+          [
+            57,
+            62,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a site owner, I want all videos to be watermarked with a Front Row Agile logo so that the videos are clearly from the Front Row Agile site.\r",
+      {
+        "entities": [
+          [
+            5,
+            15,
+            "ACTOR"
+          ],
+          [
+            28,
+            34,
+            "CLASS ENTITY"
+          ],
+          [
+            76,
+            80,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a trainer, I can set the prices for my course so that I can make filthy lucre.\r",
+      {
+        "entities": [
+          [
+            5,
+            12,
+            "ACTOR"
+          ],
+          [
+            28,
+            34,
+            "ATTRIBUTE"
+          ],
+          [
+            42,
+            48,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a trainer, I can set quantity thresholds and discounts so that I can offer lower prices for larger orders such as “buy three, get 10% off”.\r",
+      {
+        "entities": [
+          [
+            5,
+            12,
+            "ACTOR"
+          ],
+          [
+            48,
+            57,
+            "ATTRIBUTE"
+          ],
+          [
+            84,
+            90,
+            "ATTRIBUTE"
+          ],
+          [
+            102,
+            108,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a trainer, I can create discount codes I can give to people so that I can customise pricing.\r",
+      {
+        "entities": [
+          [
+            5,
+            12,
+            "ACTOR"
+          ],
+          [
+            27,
+            41,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a site visitor, I can put courses in my shopping cart so that I can purchase them and participate in (watch) them.\r",
+      {
+        "entities": [
+          [
+            5,
+            17,
+            "ACTOR"
+          ],
+          [
+            29,
+            36,
+            "CLASS ENTITY"
+          ],
+          [
+            43,
+            56,
+            "CLASS ENTITY"
+          ],
+          [
+            71,
+            84,
+            "METHOD"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a site visitor, I can put one chapter of a course in my shopping cart so that I can purchase just a part of a course.\r",
+      {
+        "entities": [
+          [
+            5,
+            17,
+            "ACTOR"
+          ],
+          [
+            46,
+            52,
+            "CLASS ENTITY"
+          ],
+          [
+            59,
+            72,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a site visitor, I can pay for the courses in my cart with a credit card so that I can purchase them and participate in (watch) them.\r",
+      {
+        "entities": [
+          [
+            5,
+            17,
+            "ACTOR"
+          ],
+          [
+            37,
+            44,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a site visitor, I can pay for the courses in my cart with PayPal so that I can purchase them and participate in (watch) them.\r",
+      {
+        "entities": [
+          [
+            5,
+            17,
+            "ACTOR"
+          ],
+          [
+            37,
+            44,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a buyer, I receive a receipt for any course I pay for so that I can prove I paid for it.\r",
+      {
+        "entities": [
+          [
+            5,
+            10,
+            "ACTOR"
+          ],
+          [
+            24,
+            31,
+            "ATTRIBUTE"
+          ],
+          [
+            40,
+            46,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a participant, I can announce my participation in a course at various times to various social media sites so that I can tell others about what I’m doing.\r",
+      {
+        "entities": [
+          [
+            5,
+            16,
+            "ACTOR"
+          ],
+          [
+            55,
+            61,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ]
+  ]
+}

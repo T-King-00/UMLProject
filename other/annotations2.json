@@ -1,0 +1,367 @@
+{
+  "classes": [
+    "ACTOR",
+    "CLASS ENTITY",
+    "ATTRIBUTE",
+    "METHOD"
+  ],
+  "annotations": [
+    [
+      "As a chef, I want to add new dishes.\r",
+      {
+        "entities": [
+          [
+            5,
+            9,
+            "ACTOR"
+          ],
+          [
+            29,
+            35,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a chef, I want to check the available amount ingredients.\r",
+      {
+        "entities": [
+          [
+            5,
+            9,
+            "ACTOR"
+          ],
+          [
+            31,
+            59,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a manager, I want to update employee data so that I can keep their information up-to-date.\r",
+      {
+        "entities": [
+          [
+            5,
+            12,
+            "ACTOR"
+          ],
+          [
+            31,
+            39,
+            "CLASS ENTITY"
+          ],
+          [
+            40,
+            44,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a manager, I want to update items in inventory list.\r",
+      {
+        "entities": [
+          [
+            5,
+            12,
+            "ACTOR"
+          ],
+          [
+            31,
+            36,
+            "ATTRIBUTE"
+          ],
+          [
+            40,
+            54,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a manager, I want to update the inventory list so that I can fix problems in the list.\r",
+      {
+        "entities": [
+          [
+            5,
+            12,
+            "ACTOR"
+          ],
+          [
+            24,
+            30,
+            "METHOD"
+          ],
+          [
+            35,
+            49,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a waiter, I want to update the waiting time of the table.\r",
+      {
+        "entities": [
+          [
+            5,
+            11,
+            "ACTOR"
+          ],
+          [
+            23,
+            29,
+            "METHOD"
+          ],
+          [
+            34,
+            46,
+            "ATTRIBUTE"
+          ],
+          [
+            54,
+            59,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a waiter, I want to view menu groups.\r",
+      {
+        "entities": [
+          [
+            5,
+            11,
+            "ACTOR"
+          ],
+          [
+            28,
+            32,
+            "CLASS ENTITY"
+          ],
+          [
+            33,
+            39,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a waiter, I want to view menu.\r",
+      {
+        "entities": [
+          [
+            5,
+            11,
+            "ATTRIBUTE"
+          ],
+          [
+            23,
+            27,
+            "METHOD"
+          ],
+          [
+            28,
+            32,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a waiter, I want to view order items under menu groups.\r",
+      {
+        "entities": [
+          [
+            5,
+            11,
+            "ACTOR"
+          ],
+          [
+            28,
+            33,
+            "CLASS ENTITY"
+          ],
+          [
+            34,
+            39,
+            "ATTRIBUTE"
+          ],
+          [
+            46,
+            50,
+            "CLASS ENTITY"
+          ],
+          [
+            51,
+            57,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As an employee, I want to add a customer order.\r",
+      {
+        "entities": [
+          [
+            6,
+            14,
+            "ACTOR"
+          ],
+          [
+            32,
+            40,
+            "CLASS ENTITY"
+          ],
+          [
+            41,
+            46,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As an employee, I want to add a new information about myself to the my employee data\r",
+      {
+        "entities": [
+          [
+            6,
+            14,
+            "ACTOR"
+          ],
+          [
+            71,
+            79,
+            "CLASS ENTITY"
+          ],
+          [
+            80,
+            84,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a customer, I want to create which book has been read the most this month.\r",
+      {
+        "entities": [
+          [
+            25,
+            31,
+            "METHOD"
+          ],
+          [
+            38,
+            42,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a librarian, I want a random book suggestion system so I can recommend to the visitors that are asked for book suggestions since I do not read books.\r",
+      {
+        "entities": [
+          [
+            5,
+            14,
+            "ACTOR"
+          ],
+          [
+            32,
+            36,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a librarian, I want to add and edit the subscribers' profiles so that I can enter their details in the system.\r",
+      {
+        "entities": [
+          [
+            5,
+            14,
+            "ACTOR"
+          ],
+          [
+            26,
+            38,
+            "METHOD"
+          ],
+          [
+            43,
+            54,
+            "CLASS ENTITY"
+          ],
+          [
+            56,
+            64,
+            "ATTRIBUTE"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a librarian, I want to add books to the library.\r",
+      {
+        "entities": [
+          [
+            5,
+            14,
+            "ACTOR"
+          ],
+          [
+            26,
+            29,
+            "METHOD"
+          ],
+          [
+            30,
+            35,
+            "CLASS ENTITY"
+          ],
+          [
+            43,
+            50,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ],
+    [
+      "As a librarian, I want to add new books.\r",
+      {
+        "entities": [
+          [
+            5,
+            14,
+            "ACTOR"
+          ],
+          [
+            26,
+            33,
+            "METHOD"
+          ],
+          [
+            34,
+            39,
+            "CLASS ENTITY"
+          ]
+        ]
+      }
+    ]
+  ]
+}
