@@ -14,25 +14,25 @@ def preprocess(sentences):
         # sentences [ i ] = sentence.replace ( '\r\n', '' )  # Remove newline
         sentences [ i ] = re.sub ( r'\W+', ' ', sentence )
         print ( sentences [ i ] )
-
     return sentences
 
 
 def stemmingAlgorithm(words):
     for i, word in enumerate ( words ):
-        words [ i ] = word.lemma_
+        doc = helperFunctions.nlp ( word )
+        for t in doc:
+            words [ i ] = t.lemma_
     return words
 
 
 def parser(sentences):
     global conceptList
     global noun_phrases
-    docs = helperFunctions.nlp ( sentences )
     # nouns
     for sentenceObj in sentences:
         objNlp = helperFunctions.nlp ( sentenceObj )
         for doc in objNlp:
-            print ( "doc tag" )
+
             if doc.pos_ == "PROPN" or doc.dep_ == "ROOT":
                 conceptList.append ( doc.text )
         ### this part get compound nouns (actors))
@@ -58,27 +58,25 @@ def removestopwords_from_conceptlist():
     conceptList = list ( dict.fromkeys ( conceptList ) )
 
 
+###  main part
 file = helperFunctions.getFile ()
 sentences = helperFunctions.getSentencesFromFile ( file )
 
-# reduce sentences
-# removes determinants , aux verbs and adjectives.
-sentences = helperFunctions.reduceSentences ( sentences )
 stop_words_found = [ ]
 countOfWords = 0
 stop_words = stop_words.STOP_WORDS
 wordsinDoc = {}
-sentences_preprocessed = preprocess ( sentences )
-for sentence in sentences_preprocessed:
+for sentence in sentences:
+    sentence = sentence.lower ()
     sentence = helperFunctions.nlp ( sentence )
     for tok in sentence:
-        if tok.is_stop:
+        if tok.is_stop or tok.text == "," or tok.text == "." or tok.text == '“':
             stop_words_found.append ( tok.text )
         else:
             countOfWords = countOfWords + 1
-            if tok not in wordsinDoc:
-                wordsinDoc [ tok ] = 0
-            wordsinDoc [ tok ] += 1
+            if tok.text not in wordsinDoc:
+                wordsinDoc [ tok.text ] = 0
+            wordsinDoc [ tok.text ] = wordsinDoc [ tok.text ] + 1
 if stop_words_found is None:
     print ( "is nnone" )
 stop_words_found = list ( dict.fromkeys ( stop_words_found ) )
@@ -94,5 +92,7 @@ for key in wordsinDoc:
 print ( frequency )
 
 wordsAfterLemmaization = stemmingAlgorithm ( list ( wordsinDoc.keys () ) )
-
 print ( wordsAfterLemmaization )
+
+conceptListVar = parser ( sentences )
+print ( conceptListVar )
