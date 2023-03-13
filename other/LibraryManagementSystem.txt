@@ -1,12 +1,3 @@
-As a chef, I want to add new dishes.
-As a chef, I want to check the available amount ingredients.
-As a manager, I want to update employee data so that I can keep their information up-to-date.
-As a manager, I want to update items in inventory list.
-As a manager, I want to update the inventory list so that I can fix problems in the list.
-As a waiter, I want to update the waiting time of the table.
-As a waiter, I want to view menu groups.
-As a waiter, I want to view menu.
-As a waiter, I want to view order items under menu groups.
 As an employee, I want to add a customer order.
 As an employee, I want to add a new information about myself to the my employee data
 As an employee, I want to add a store order.

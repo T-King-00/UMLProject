@@ -1,7 +1,5 @@
 import helperFunctions
 
-classes = set ()
-
 
 class classDiagram:
 
@@ -53,6 +51,42 @@ class classDiagram:
     deps_attr = [ "pobj", "dobj", "conj" ]
     deps_class = [ "nsubj", "nsubjpass", "conj", "attr" ]
 
+    def add_to_attributes(classes_attr, sent, token):
+        if token not in classes_attr.keys ():
+            try:
+                classes_attr [ list ( sent.root.children ) [ 0 ].lemma_ ].add ( token )
+            except KeyError:
+                pass
+        return classes_attr
+
+    def discard_attr_from_classes(classes_attr, attribute):
+        for cls in classes_attr.keys ():
+            if attribute in classes_attr [ cls ]:
+                classes_attr [ cls ].discard ( attribute )
+        return classes_attr
+
+    def add_to_classes(classes_attr, sent, token):
+        if token not in classes_attr.keys ():
+            classes_attr [ token ] = set ()
+        else:
+            classes_attr [ token ].add ( token )
+        classes_attr = classDiagram.discard_attr_from_classes ( classes_attr, token )
+        return classes_attr
+
+    def get_classes_attributes(text):
+        classes_attr = {}
+        doc = helperFunctions.nlp ( text )
+        for sent in doc.sents:
+            for token in sent:
+                if token.pos_ == "NOUN":
+                    # attribute
+                    if token.dep_ in classDiagram.deps_attr:
+                        classes_attr = classDiagram.add_to_attributes ( classes_attr, sent, token.lemma_ )
+                    # class
+                    elif token.dep_ in classDiagram.deps_class:
+                        classes_attr = classDiagram.add_to_classes ( classes_attr, sent, token.lemma_ )
+        return classes_attr
+
     def getClasses1(sent, actorslist):
         classes = set ()
 
@@ -79,6 +113,31 @@ class classDiagram:
 
         return classes
 
+    def test_next_attr(doc, i):
+        list__ = set ()
+        br = 0
+        while (br != 1):
+            if doc [ i + 1 ].text == "," or ";":
+                if doc [ i + 2 ].text == "and" and doc [ i + 3 ].pos_ == "PRON":
+                    list__.add ( doc [ i + 4 ].lemma_ )
+                if doc [ i + 2 ].pos_ == "PRON":
+                    list__.add ( doc [ i + 3 ].lemma_ )
+                else:
+                    list__.add ( doc [ i + 2 ].lemma_ )
+                # if doc[i+2].pos_ != "PRON" and (doc[i+2].tag_ != "NN" or "NNS"):
+                #     br = 1
+            elif doc [ i + 1 ].text == "and":
+                if doc [ i + 2 ].pos_ == "PRON":
+                    list__.add ( doc [ i + 3 ].lemma_ )
+                else:
+                    list__.add ( doc [ i + 2 ].lemma_ )
+            elif doc [ i + 1 ].pos_ == "PRON":
+                list__.add ( doc [ i + 2 ].lemma_ )
+            if doc [ i + 1 ].text == ".":
+                br = 1
+            i = i + 1
+        return list__
+
     def get_attributes(text):
         global classes
         doc = helperFunctions.nlp ( text )
@@ -102,10 +161,10 @@ class classDiagram:
                 if doc [ i - 2 ].text == "and":
                     concept_attributes.add ( doc [ i - 3 ].lemma_ )
                     classes.discard ( doc [ i - 3 ].lemma_ )
-            # A4
-            if token.text == "of":
-                concept_attributes.add ( doc [ i - 1 ].lemma_ )
-                classes.discard ( doc [ i - 1 ].lemma_ )
+            # #A4
+            # if token.text == "of":
+            #     concept_attributes.add(doc[i-1].lemma_)
+            #     classes.discard(doc[i-1].lemma_)
             if token.tag_ == "NN" or token.tag_ == "NNS":
                 if doc [ i - 1 ].tag_ == "IN":
                     if doc [ i - 2 ].pos_ == "VERB":
@@ -154,70 +213,16 @@ class classDiagram:
             #         classes.discard(l)
         return concept_attributes  # , relationship_attributes,attributes_noun_phrase_main
 
-    def extract_attributes(sentence):
-        global classes
-        doc = helperFunctions.nlp ( sentence )
-        # attributes_noun_phrase_main = set()
-        # relationship_attributes = set()
-        concept_attributes = set ()
-        for i, token in enumerate ( doc ):
-            print ( "token text:", token.text, " /token tag:", token.tag_, "/token pos:", token.pos_, "/token dep :",
-                    token.dep_ )
-            if token.tag_ == "PRP":
-                continue
-            PREPOSITIONS = [ "to", "for", "of" ]
-            if token.text in [ x for x in PREPOSITIONS ]:
-                print ( "yes" )
-            # if token.dep_ =="dobj":
+    def text_to_uml(text):
+        uml = {}
+        entities = classDiagram.get_classes ( text )
+        attributes = classDiagram.get_attributes ( text )
+        for entity in entities:
+            uml [ entity ] = [ ]
+        for attribute in attributes:
+            entity = classDiagram.get_entity ( text, attribute, entities )
+            if entity:
+                uml [ entity ].append ( (attribute, classDiagram.get_attribute_type ( attribute )) )
 
-    def extract_classes(sentence):
-        global classes
-        classes = [ ]
-        v = sentence.find ( "so that" )
-        sentence = sentence [ 0:v ]
-        doc = helperFunctions.nlp ( sentence )
-        # attributes_noun_phrase_main = set()
-        # relationship_attributes = set()
-        concept_attributes = set ()
-        skip_next_token = 0
-        for i, token in enumerate ( doc ):
-
-            print ( "token text:", token.text, " /token tag:", token.tag_, "/token pos:", token.pos_, "/token dep :",
-                    token.dep_ )
-            if skip_next_token != 0:
-                skip_next_token = skip_next_token - 1
-                continue
-
-            if token.tag_ == "PRP":
-                continue
-            if token.tag_ == "IN" and token.pos_ == "ADP" and token.dep_ == "prep":
-                if len ( doc ) <= i + 1:
-                    break
-                if doc [ i + 1 ].tag_ == "VBG":
-                    skip_next_token = skip_next_token + 2
-                    continue
-                if doc [ i + 1 ].dep_ == "compound":
-                    word = doc [ i + 1 ].text + doc [ i + 2 ].text
-                    classes.append ( word )
-                    skip_next_token = skip_next_token + 2
-                elif doc [ i + 1 ].dep_ == "pobj":
-                    classes.append ( doc [ i + 1 ].lemma_ )
-                    skip_next_token = skip_next_token + 1
-
-            PREPOSITIONS = [ "to", "for", "of" ]
-            if token.dep_ == "dobj":
-                if token.text != "set":
-                    classes.append ( token.lemma_ )
-            if token.text in [ x for x in PREPOSITIONS ]:
-                print ( "yes" )
-                if len ( doc ) == i:
-                    break
-                if doc [ i + 1 ].dep_ == "compound":
-                    word = doc [ i + 1 ].text + doc [ i + 2 ].text
-                    classes.append ( word )
-                    skip_next_token = True
-                elif doc [ i + 1 ].dep_ == "pobj" and doc [ i + 1 ].pos_ == "PROPN":
-                    classes.append ( doc [ i + 1 ].lemma_ )
-                    skip_next_token = True
-        classes = list ( dict.fromkeys ( classes ) )
-        return classes
+        inheritance, relationship, object, object_inh = classDiagram.get_relations ( text )
+        return uml, inheritance, relationship, object, object_inh

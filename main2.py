@@ -5,6 +5,7 @@ import spacy.tokens
 import UseCase.Actor
 import helperFunctions
 import plantUML
+import xxx
 from UserStory import UserStory
 import fn
 from models.classDiagram import classDiagram
@@ -37,19 +38,21 @@ sentences = helperFunctions.getSentencesFromFile ( file )
 # removes determinants , aux verbs and adjectives.
 sentences1 = helperFunctions.reduceSentences ( sentences )
 actorsList = UserStory.extractActors ( sentences1 )
-for x in actorsList:
-    print ( x.name )
-print ( "#######################" )
+# for x in actorsList:
+# print ( x.name )
+# print ( "#######################" )
 
 """
 1-get all classes and attributes
 2-get_inheritance
 3-get relations
 """
-classes_atr = classDiagram.get_classes_attributes ( sentences1 [ 1 ] )
-print ( "classes_attr: ", str ( classes_atr.keys () ) )
-attributes = classDiagram.get_attributes ( sentences1 [ 1 ] )
-print ( "classes_attr: ", str ( attributes ) )
+
+for i, sent in enumerate ( sentences1 ):
+    classes = classDiagram.extract_classes ( sent )
+    if classes != None:
+        print ( "classes_attr: ", [ x for x in classes ] )
+    print ( "#########################################" )
 # graph = fn.graph_from_uml ( classes_attr, relations, inheritances )
 
 # for i, sent in enumerate ( sentences1 ):
@@ -63,14 +66,13 @@ print ( "classes_attr: ", str ( attributes ) )
 #
 #        print ( x )
 
-for i, sent in enumerate ( sentences1 ):
-
-    if i == 2:
-        sentence = sent.lower ()
-        x = helperFunctions.getAllNouns ( sentence )
-
-        if x is not None:
-            print ( sentence )
-            x = [ element for element in x if not any ( obj.name == element for obj in actorsList ) ]
-
-        print ( x )
+# for i, sent in enumerate ( sentences1 ):
+#     if i == 6:
+#         sentence = sent.lower ()
+#         x = helperFunctions.getAllNouns ( sentence )
+#
+#         if x is not None:
+#             print ( sentence )
+#             x = [ element for element in x if not any ( obj.name == element for obj in actorsList ) ]
+#
+#         print ( x )
